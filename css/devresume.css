@@ -10755,3 +10755,13 @@ a.resume-link:hover {
     width: 200px;
     height: 200px;
 }
+
+.before {
+    page-break-before: always;
+}
+.after {
+    page-break-after: always;
+}
+.avoid {
+    page-break-inside: avoid;
+}

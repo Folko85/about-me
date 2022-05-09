@@ -19,6 +19,10 @@
             integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    <!-- HTML2PDF JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.js"></script>
+    <script src="js/html2pdf.js"></script>
+
     <!-- Theme CSS -->
     <link id="theme-style" rel="stylesheet" href="css/devresume.css">
 
@@ -28,20 +32,26 @@
 
 <div class="main-wrapper">
     <div class="container px-3 px-lg-5">
-        <article class="resume-wrapper mx-auto theme-bg-light p-5 mb-5 my-5 shadow-lg">
+        <div class="mx-auto theme-bg-light p-3 shadow-sm" align="center">
+            <p> Понравилось резюме - сохрани себе в базу</p>
+            <button onclick="generatePDF()">Сохранить в PDF</button>
+        </div>
+        <div id="invoice">
+            <article class="resume-wrapper mx-auto theme-bg-light p-5 shadow-sm">
+                <page orientation="p">
+                    <div class="resume-header">
+                        <img class="rounded-circe float-left" src="images/profile.jpeg" height="200" width="150" alt="">
+                        <div class="row align-items-center">
+                            <div class="resume-title col-12 col-md-6 col-lg-8 col-xl-7">
+                                <h2 class="resume-name mb-0 text-uppercase">Михаил Гуторов</h2>
+                                <div class="resume-tagline mb-3 mb-md-0">Java разработчик</div>
+                            </div><!--//resume-title-->
+                            <div class="resume-contact col-12 col-md-6 col-lg-4 col-xl-4" align="left">
+                                <ul class="list-unstyled mb-0">
 
-            <div class="resume-header">
-                <img class="rounded-circe float-left" src="images/profile.jpeg" height="200" width="150" alt="">
-                <div class="row align-items-center">
-                    <div class="resume-title col-12 col-md-6 col-lg-8 col-xl-7">
-                        <h2 class="resume-name mb-0 text-uppercase">Михаил Гуторов</h2>
-                        <div class="resume-tagline mb-3 mb-md-0">Java разработчик</div>
-                    </div><!--//resume-title-->
-                    <div class="resume-contact col-12 col-md-6 col-lg-4 col-xl-4">
-                        <ul class="list-unstyled mb-0">
-                            <li class="mb-4"><i class="fas fa-phone-square fa-2x mr-2"
-                                                data-fa-transform="down-4"></i><span
-                                    class="d-lg-inline-block text-muted">+7(906)696-67-80</span></li>
+                                    <li class="mb-4"><i class="fas fa-phone-square fa-2x mr-2"
+                                                        data-fa-transform="down-4"></i><span
+                                            class="d-lg-inline-block text-muted">+7(906)696-67-80</span></li>
 
                             <li class="mb-4"><a class="resume-link" href="mailto:79066966780@yandex.ru"><i
                                     class="fas fa-envelope-square fa-2x mr-2" data-fa-transform="down-4"></i><span
@@ -59,209 +69,227 @@
                                     class="fas fa-map-marker-alt fa-2x mr-2" data-fa-transform="down-4"></i><span
                                     class="d-lg-inline-block text-muted">Брянская обл.</span></a></li>
 
-                            <li class="mb-2"></li>
-                        </ul>
-                    </div><!--//resume-contact-->
-                </div><!--//row-->
-
-            </div><!--//resume-header-->
-            <!-- 				<hr>
-             -->
-            <hr>
-            <div class="resume-body">
-                <div class="row">
-                    <div class="resume-main col-12 col-lg-8 col-xl-8 pr-0 pr-lg-5">
-                        <section class="work-section py-3">
-                            <h3 class="text-uppercase resume-section-heading mb-4">Обо мне</h3>
-                            <div class="item-content">Работаю тестировщиком-автоматизатором, опыт работы 1 год.
-                                За это время прошел обучение Java, и выполнил два дипломных проекта:
-                                индивидуальный и командный. Учебный опыт 2 года. Хочу перейти в Java-разработку<br>
-                            </div>
-                            <br>
-                            <h3 class="text-uppercase resume-section-heading mb-4">Проекты</h3>
-                            <div class="item mb-3">
-                                <div class="item-heading row align-items-center mb-2">
-                                    <h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">
-                                        Рабочие проекты
-                                    </h4>
-                                    <div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">
-                                        <a class="theme-link"
-                                           href="https://www.rtln.ru">Right Line</a> |
-                                        11.2020 - н.в.
-                                    </div>
-                                </div>
-                                <div class="item-content">
-                                    <p> Участие в разработке проекта автоматизации системного тестирования на стэке:
-                                    </p>
-                                    <ul class="resume-list">
-                                        <li> Java 11, Groovy, Gradle</li>
-                                        <li> Spring Boot 2.4.3, Spock + Spock Reports</li>
-                                        <li> JDBC + MS SQL, PostgreSQL, Oracle DB</li>
-                                        <li> MockServer, Docker</li>
-                                        <li> JavaScript, Bash</li>
-                                    </ul>
-                                </div>
-                                <div class="item-content">
-                                    <p> Доработка проекта автоматизации системного тестирования на стэке:
-                                    </p>
-                                    <ul class="resume-list">
-                                        <li> Java 11, Maver</li>
-                                        <li> Spring 5.2.0, Junit5 + Allure</li>
-                                        <li> JDBC + PostgreSQL,</li>
-                                        <li> Openfeign 10.4.0, Swagger</li>
-                                        <li> Kafka</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="item mb-3">
-                                <div class="item-heading row align-items-center mb-2">
-                                    <h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0"><a class="theme-link"
-                                                                                                    href="https://skillbox.ru">Учебные
-                                        проекты</a></h4>
-                                    <div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">
-                                        <a class="theme-link" href="https://skillbox.ru">SkillBox</a> |
-                                        02.2020 - 12.2021
-                                    </div>
-                                </div>
-                                <div class="item-content">
-                                    <p> Разработка дипломного приложения "Соцсеть для разработчиков" на
-                                        стеке:
-                                    </p>
-                                    <ul class="resume-list">
-                                        <li> Java 17, Maven, Gitlab, Docker Compose</li>
-                                        <li> Spring Boot, Spring Security, Spring Cloud Config</li>
-                                        <li> Spring Data (JPA) Hibernate, Liquibase</li>
-                                        <li> RabbitMQ, Redis, SocketIO</li>
-                                        <li> Grafana, Prometheus, Loki, Promtail</li>
-                                        <li> Vaadin 14</li>
-                                    </ul>
-                                </div>
-                                <div class="item-content">
-                                    <p> Разработка приложения "Онлайн магазин" с использованием:
-                                    </p>
-                                    <ul class="resume-list">
-                                        <li> Spring Boot</li>
-                                        <li> База данных MongoDB (with pipelines)</li>
-                                        <li> Junit 5 + TestContainers</li>
-                                        <li> OpenAPI (spring-doc)</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <section class="project-section py-3">
-                                <h3 class="text-uppercase resume-section-heading mb-4">Опыт работы</h3>
-                                <div class="item mb-3">
-                                    <h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0"></h4>
-                                    <div class="item-content text-muted text-left">
-                                        <p>11.2020 - н.в.</p>
-                                    </div>
-                                    <h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0"></h4>
-                                    <div class="item-content">
-                                        <p>"Right-Line", Automation QA</p>
-                                    </div>
-                                </div>
-                                <div class="item mb-3">
-                                    <h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0"></h4>
-                                    <div class="item-content text-muted text-left">
-                                        <p>02.2020 - 12.2021</p>
-                                    </div>
-                                    <h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0"></h4>
-                                    <div class="item-content">
-                                        <p>Курсы Java разработки + стажировка</p>
-                                    </div>
-                                </div>
-                                <div class="item mb-3">
-                                    <h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0"></h4>
-                                    <div class="item-content text-muted text-left">
-                                        <p>05.2018 - 11.2020</p>
-                                    </div>
-                                    <h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0"></h4>
-                                    <div class="item-content">
-                                        <p>Работа инженером по промышленной автоматике</p>
-                                    </div>
-                                </div>
-                                <div class="item mb-3">
-                                    <h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0"></h4>
-                                    <div class="item-content text-muted text-left">
-                                        <p>06.2008 - 0.2018</p>
-                                    </div>
-                                    <h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0"></h4>
-                                    <div class="item-content">
-                                        <p>Работа в других сферах</p>
-                                    </div>
-                                </div>
-                            </section><!--//project-section-->
-                        </section>
-                    </div><!--//resume-main-->
-                    <aside class="resume-aside col-12 col-lg-4 col-xl-4 px-lg-4 pb-lg-4">
-                        <section class="skills-section py-3">
-                            <h3 class="text-uppercase resume-section-heading mb-4">Навыки</h3>
-                            <div class="item">
-                                <ul class="list-unstyled resume-skills-list">
-                                    <li class="mb-2">Java Core (8, 11)</li>
-                                    <li class="mb-2">Groovy</li>
-                                    <li class="mb-2">Spring Framework (Boot, Security, Data)
-                                    </li>
-                                    <li class="mb-2">RabbitMQ
-                                    </li>
-                                    <li class="mb-2">Redis, MongoDB
-                                    </li>
-                                    <li class="mb-2">Docker, Jenkins
-                                    </li>
-                                    <li class="mb-2">Spock, JUnit, Concordion
-                                    </li>
-                                    <li class="mb-2">ORM (Hibernate, MyBatis, JDBC)
-                                    </li>
-                                    <li class="mb-2">Liquibase, PostgreSQL
-                                    </li>
-                                    <li class="mb-2">IntelliJ IDEA, Maven, Gradle, Git
-                                    </li>
-                                    <li class="mb-2">Jira, Redmine
-                                    </li>
-                                    <li class="mb-2">Linux, Bash
-                                    </li>
                                 </ul>
+                            </div><!--//resume-contact-->
+                        </div><!--//row-->
+
+                    </div><!--//resume-header-->
+                    <!-- 				<hr>                 -->
+                    <hr>
+                    <div class="resume-body">
+                        <div class="row">
+                            <div class="resume-main col-12 col-lg-8 col-xl-8 pr-0 pr-lg-5">
+                                <section class="work-section py-3">
+                                    <h3 class="text-uppercase resume-section-heading mb-4">Обо мне</h3>
+                                    <div class="item-content">Работаю тестировщиком-автоматизатором, опыт работы 1 год.
+                                        За это время прошел обучение Java, и выполнил два дипломных проекта:
+                                        индивидуальный и командный. Учебный опыт 2 года. Хочу перейти в
+                                        Java-разработку<br>
+                                    </div>
+                                    <br>
+                                    <h3 class="text-uppercase resume-section-heading mb-4">Проекты</h3>
+                                    <div class="item mb-3">
+                                        <div class="item-heading row align-items-center mb-2">
+                                            <h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">
+                                                Рабочие проекты
+                                            </h4>
+                                            <div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">
+                                                <a class="theme-link"
+                                                   href="https://www.rtln.ru">Right Line</a> |
+                                                11.2020 - н.в.
+                                            </div>
+                                        </div>
+                                        <div class="item-content">
+                                            <p> Участие в разработке проекта автоматизации системного тестирования
+                                                для проекта СБП на стэке:
+                                            </p>
+                                            <ul class="resume-list">
+                                                <li> Java 11, Groovy, Gradle</li>
+                                                <li> Spring Boot 2.4.3, Spock + Spock Reports</li>
+                                                <li> JDBC + MS SQL, PostgreSQL, Oracle DB</li>
+                                                <li> MockServer, Docker</li>
+                                                <li> JavaScript, Bash</li>
+                                            </ul>
+                                        </div>
+                                        <div class="item-content">
+                                            <p> Доработка проекта автоматизации системного тестирования
+                                                для проекта Bundle (банковские подписки) на стэке:
+                                            </p>
+                                            <ul class="resume-list">
+                                                <li> Java 11, Maver</li>
+                                                <li> Spring 5.2.0, Junit5 + Allure</li>
+                                                <li> JDBC + PostgreSQL,</li>
+                                                <li> Openfeign 10.4.0, Swagger</li>
+                                                <li> Kafka</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </section>
                             </div>
-                        </section><!--//skills-section-->
-                        <section class="education-section py-3">
-                            <h3 class="text-uppercase resume-section-heading mb-4">Образование</h3>
-                            <ul class="list-unstyled resume-education-list">
-                                <li class="mb-3">
-                                    <div class="resume-degree font-weight-bold"> Java разработчик</div>
-                                    <div class="resume-degree-org text-muted">Обучающая онлайн-платформа "SkillBox"
+                            <aside class="resume-aside col-12 col-lg-4 col-xl-4 px-lg-4 pb-lg-4">
+                                <section class="skills-section py-3">
+                                    <h3 class="text-uppercase resume-section-heading mb-4">Навыки</h3>
+                                    <div class="item">
+                                        <ul class="list-unstyled resume-skills-list">
+                                            <ul class="list-unstyled resume-skills-list">
+                                                <li class="mb-2">Java Core (8, 11)</li>
+                                                <li class="mb-2">Groovy</li>
+                                                <li class="mb-2">Spring Framework (Boot, Security, Data)
+                                                </li>
+                                                <li class="mb-2">RabbitMQ
+                                                </li>
+                                                <li class="mb-2">Redis, MongoDB
+                                                </li>
+                                                <li class="mb-2">Docker, Jenkins
+                                                </li>
+                                                <li class="mb-2">Spock, JUnit, Concordion
+                                                </li>
+                                                <li class="mb-2">ORM (Hibernate, MyBatis, JDBC)
+                                                </li>
+                                                <li class="mb-2">Liquibase, PostgreSQL
+                                                </li>
+                                                <li class="mb-2">IntelliJ IDEA, Maven, Gradle, Git
+                                                </li>
+                                                <li class="mb-2">Jira, Redmine
+                                                </li>
+                                                <li class="mb-2">Linux, Bash
+                                                </li>
+                                            </ul>
+                                        </ul>
                                     </div>
-                                    <div class="resume-degree-time text-muted">02.2020 - 12.2021</div>
-                                </li>
-                                <li class="mb-3">
-                                    <div class="resume-degree font-weight-bold">Промышленная электроника
+                                </section><!--//skills-section-->
+                            </aside>
+                        </div>
+                    </div>
+                </page>
+                <p class="after"></p>
+                <page orientation="p">
+                    <div class="resume-body">
+                        <div class="row">
+                            <div class="resume-main col-12 col-lg-8 col-xl-8 pr-0 pr-lg-5">
+                                <section class="work-section py-3">
+                                    <div class="item mb-3">
+                                        <div class="item-heading row align-items-center mb-2">
+                                            <h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0"><a
+                                                    class="theme-link"
+                                                    href="https://skillbox.ru">Учебные
+                                                проекты</a></h4>
+                                            <div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">
+                                                <a class="theme-link" href="https://skillbox.ru">SkillBox</a> |
+                                                02.2020 - 12.2021
+                                            </div>
+                                        </div>
+                                        <div class="item-content">
+                                            <p> Разработка дипломного приложения "Соцсеть для разработчиков" на
+                                                стеке:
+                                            </p>
+                                            <ul class="resume-list">
+                                                <li> Java 17, Maven, Gitlab, Docker Compose</li>
+                                                <li> Spring Boot, Spring Security, Spring Cloud Config</li>
+                                                <li> Spring Data (JPA) Hibernate, Liquibase</li>
+                                                <li> RabbitMQ, Redis, SocketIO</li>
+                                                <li> Grafana, Prometheus, Loki, Promtail</li>
+                                                <li> Vaadin 14</li>
+                                            </ul>
+                                        </div>
+                                        <div class="item-content">
+                                            <p> Разработка приложения "Онлайн магазин" с использованием:
+                                            </p>
+                                            <ul class="resume-list">
+                                                <li> Spring Boot</li>
+                                                <li> База данных MongoDB (with pipelines)</li>
+                                                <li> Junit 5 + TestContainers</li>
+                                                <li> OpenAPI (spring-doc)</li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                    <div class="resume-degree-org text-muted">Брянский Государственный Технический
-                                        Университет
-                                    </div>
-                                    <div class="resume-degree-time text-muted">09.2002 - 06.2008</div>
-                                </li>
-                            </ul>
-                        </section><!--//education-section-->
 
-                        <section class="skills-section py-3">
-                            <h3 class="text-uppercase resume-section-heading mb-4">Языки</h3>
-                            <ul class="list-unstyled resume-lang-list">
-                                <li class="mb-2">English <span class="text-muted">(Intermediate)</span></li>
-                                <li class="mb-2">Русский <span class="text-muted">(родной)</span></li>
-                            </ul>
-                        </section><!--//certificates-section-->
+                                    <section class="project-section py-3">
+                                        <h3 class="text-uppercase resume-section-heading mb-4">Опыт работы</h3>
+                                        <div class="item mb-3">
+                                            <h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0"></h4>
+                                            <div class="item-content text-muted text-left">
+                                                <p>11.2020 - н.в.</p>
+                                            </div>
+                                            <h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0"></h4>
+                                            <div class="item-content">
+                                                <p>"Right-Line", Automation QA</p>
+                                            </div>
+                                        </div>
+                                        <div class="item mb-3">
+                                            <h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0"></h4>
+                                            <div class="item-content text-muted text-left">
+                                                <p>02.2020 - 12.2021</p>
+                                            </div>
+                                            <h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0"></h4>
+                                            <div class="item-content">
+                                                <p>Курсы Java разработки + стажировка</p>
+                                            </div>
+                                        </div>
+                                        <div class="item mb-3">
+                                            <h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0"></h4>
+                                            <div class="item-content text-muted text-left">
+                                                <p>05.2018 - 11.2020</p>
+                                            </div>
+                                            <h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0"></h4>
+                                            <div class="item-content">
+                                                <p>Работа инженером по промышленной автоматике</p>
+                                            </div>
+                                        </div>
+                                        <div class="item mb-3">
+                                            <h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0"></h4>
+                                            <div class="item-content text-muted text-left">
+                                                <p>06.2008 - 0.2018</p>
+                                            </div>
+                                            <h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0"></h4>
+                                            <div class="item-content">
+                                                <p>Работа в других сферах</p>
+                                            </div>
+                                        </div>
+                                    </section><!--//project-section-->
+                                </section>
+                            </div><!--//resume-main-->
+                            <aside class="resume-aside col-12 col-lg-4 col-xl-4 px-lg-4 pb-lg-4">
 
-                    </aside><!--//resume-aside-->
-                </div><!--//row-->
-            </div><!--//resume-body-->
-            <hr>
 
-        </article>
+                                <section class="education-section py-3">
+                                    <h3 class="text-uppercase resume-section-heading mb-4">Образование</h3>
+                                    <ul class="list-unstyled resume-education-list">
+                                        <li class="mb-3">
+                                            <div class="resume-degree font-weight-bold"> Java разработчик</div>
+                                            <div class="resume-degree-org text-muted">Обучающая онлайн-платформа
+                                                "SkillBox"
+                                            </div>
+                                            <div class="resume-degree-time text-muted">02.2020 - 12.2021</div>
+                                        </li>
+                                        <li class="mb-3">
+                                            <div class="resume-degree font-weight-bold">Промышленная электроника
+                                            </div>
+                                            <div class="resume-degree-org text-muted">Брянский Государственный
+                                                Технический
+                                                Университет
+                                            </div>
+                                            <div class="resume-degree-time text-muted">09.2002 - 06.2008</div>
+                                        </li>
+                                    </ul>
+                                </section><!--//education-section-->
 
+                                <section class="skills-section py-3">
+                                    <h3 class="text-uppercase resume-section-heading mb-4">Языки</h3>
+                                    <ul class="list-unstyled resume-lang-list">
+                                        <li class="mb-2">English <span class="text-muted">(Intermediate)</span></li>
+                                        <li class="mb-2">Русский <span class="text-muted">(родной)</span></li>
+                                    </ul>
+                                </section><!--//certificates-section-->
+
+                            </aside><!--//resume-aside-->
+                        </div><!--//row-->
+                    </div><!--//resume-body-->
+                    <hr>
+                </page>
+            </article>
+        </div><!--//html2pdf-->
     </div><!--//container-->
-
 </div><!--//main-wrapper-->
-
-
 </body>
 </html>
