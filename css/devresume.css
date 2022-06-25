@@ -8552,7 +8552,7 @@ a.bg-dark:hover, a.bg-dark:focus, button.bg-dark:hover, button.bg-dark:focus {
 }
 
 .mb-4, .my-4 {
-    margin-bottom: 1.5rem !important
+    margin-bottom: 1.0rem !important
 }
 
 .ml-4, .mx-4 {
@@ -10764,4 +10764,10 @@ a.resume-link:hover {
 }
 .avoid {
     page-break-inside: avoid;
+}
+.icon {
+    font-family: "Font Awesome 6 Brands", sans-serif;
+}
+.icon-common {
+    font-family: "Font Awesome 6 Free", sans-serif;
 }
